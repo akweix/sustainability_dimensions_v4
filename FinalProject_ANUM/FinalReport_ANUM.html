@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.3.450">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Sean Anum">
+
+<title>Profit is the only Green: Visualization of Swiss Stocks &amp; SRI portfolios Sustainability</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="FinalReport_ANUM_files/libs/clipboard/clipboard.min.js"></script>
+<script src="FinalReport_ANUM_files/libs/quarto-html/quarto.js"></script>
+<script src="FinalReport_ANUM_files/libs/quarto-html/popper.min.js"></script>
+<script src="FinalReport_ANUM_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="FinalReport_ANUM_files/libs/quarto-html/anchor.min.js"></script>
+<link href="FinalReport_ANUM_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="FinalReport_ANUM_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="FinalReport_ANUM_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="FinalReport_ANUM_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="FinalReport_ANUM_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="FinalReport_ANUM_files/libs/htmlwidgets-1.6.2/htmlwidgets.js"></script>
+<script src="FinalReport_ANUM_files/libs/plotly-binding-4.10.3/plotly.js"></script>
+<script src="FinalReport_ANUM_files/libs/typedarray-0.1/typedarray.min.js"></script>
+<script src="FinalReport_ANUM_files/libs/jquery-3.5.1/jquery.min.js"></script>
+<link href="FinalReport_ANUM_files/libs/crosstalk-1.2.0/css/crosstalk.min.css" rel="stylesheet">
+<script src="FinalReport_ANUM_files/libs/crosstalk-1.2.0/js/crosstalk.min.js"></script>
+<link href="FinalReport_ANUM_files/libs/plotly-htmlwidgets-css-2.11.1/plotly-htmlwidgets.css" rel="stylesheet">
+<script src="FinalReport_ANUM_files/libs/plotly-main-2.11.1/plotly-latest.min.js"></script>
+
+
+</head>
+
+<body class="fullcontent">
+
+<div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
+
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title"><em>Profit is the only Green</em>: Visualization of Swiss Stocks &amp; SRI portfolios Sustainability</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Sean Anum </p>
+          </div>
+  </div>
+    
+  
+    
+  </div>
+  
+
+</header>
+
+<section id="abstract" class="level2">
+<h2 class="anchored" data-anchor-id="abstract">Abstract</h2>
+<p>Socially Responsible Investing (SRI), which is increasingly popular, emphasizes social and environmental factors in investment decisions to promote sustainability. In theory, SRI outperforms, especially in the long run. While practitioners typically remain skeptical, this unique return-based sustainability assessment of Swiss Stocks demonstrates SRI’s over performance and ability to promote sustainability.</p>
+</section>
+<section id="research-question" class="level2">
+<h2 class="anchored" data-anchor-id="research-question">Research Question</h2>
+<p><strong>Is SRI a significant means of promoting Sustainability?</strong></p>
+<p>Sustainability, per the 1987 United Nations Brundtland Commission, means meeting present needs without compromising future generations, involving social, economic, and environmental aspects. In investments, it translates to SRI, blending social and environmental factors into investment decisions. This project seeks to quantitatively depict these sustainability dimensions for stocks and SRI portfolios on the SIX (Swiss Stock Exchange).</p>
+</section>
+<section id="first-sketch" class="level2">
+<h2 class="anchored" data-anchor-id="first-sketch">First Sketch</h2>
+<p><img src="https://static.wixstatic.com/media/5c2c44_76b3c87444414450b83a65cd3f4c34e5~mv2.png/v1/fill/w_750,h_430,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/handdrawn.png" class="img-fluid"></p>
+</section>
+<section id="methodology" class="level2">
+<h2 class="anchored" data-anchor-id="methodology">Methodology</h2>
+<section id="data-proxies" class="level6">
+<h6 class="anchored" data-anchor-id="data-proxies">Data Proxies</h6>
+<p>The data required deals with the three sustainability parameters for each stock on the Swiss Exchange: Environmental, Social and Economic. For example:</p>
+<table class="table">
+<thead>
+<tr class="header">
+<th>Company Name</th>
+<th>Environmental Score</th>
+<th>Social Score</th>
+<th>Economic Score</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Nestle</td>
+<td>XX</td>
+<td>XX</td>
+<td>XX</td>
+</tr>
+</tbody>
+</table>
+<p>The Quantitative proxies are as follows: <strong>1. Environmental</strong>: An ESG rating with a numeric individual score (pillar) for a firm’s environmental impact; <strong>2. Social</strong>: An ESG rating with a numeric individual score for a firm’s Social impact; <strong>3. Economic</strong>: a risk-adjusted measure of the firm’s expected return: Capital Asset Pricing Model (CAPM)</p>
+</section>
+<section id="visualizing-three-parameters" class="level6">
+<h6 class="anchored" data-anchor-id="visualizing-three-parameters">Visualizing Three Parameters</h6>
+<p>A 3D plot was chosen to visualize three quantitative parameters, effectively showing their relationship and intersections. Stocks with high environmental, social, and economic scores are classified as “Sustainable,” while those with low scores are deemed “At Risk.” Stocks with scores between these extremes are categorized as “Acceptable.”</p>
+<p>The final visualization seeks to visualize the relative distribution of individual stocks &amp; SRI portfolios regarding the three parameters. Hence, a standardized score for each parameter was used. The logic was to ensure that all parameters could be drawn down to a somewhat “equal” scale, thus ensuring an informative visual effect.</p>
+</section>
+<section id="constructing-sri-portfolios" class="level6">
+<h6 class="anchored" data-anchor-id="constructing-sri-portfolios">Constructing SRI Portfolios</h6>
+<p>Using the collected individual stock data, four SRI funds were created:</p>
+<ol type="1">
+<li><p>Negative Screening: This SRI fund excludes investments in companies or sectors that do not meet specific ethical, environmental, or social criteria.</p></li>
+<li><p>Best in class: This fund selects companies that outperform their peers in environmental, social, and governance (ESG) criteria within each sector.</p></li>
+<li><p>Thematic Approach: This fund focuses on specific sustainability themes or sectors, such as renewable energy or social justice.</p></li>
+<li><p>ESG integration: This fund incorporates ESG factors into traditional financial analysis to identify risks and opportunities not captured by conventional methods.</p></li>
+</ol>
+</section>
+</section>
+<section id="data" class="level2">
+<h2 class="anchored" data-anchor-id="data">Data</h2>
+<section id="sources" class="level6">
+<h6 class="anchored" data-anchor-id="sources">Sources</h6>
+<p>Data was collected for each of the three parameters. Data was attained via the Thompson Reuters financial market portal Refinitiv Eikon.</p>
+<table class="table">
+<colgroup>
+<col style="width: 31%">
+<col style="width: 33%">
+<col style="width: 34%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Environmental Pillar Score (ESG rating)</th>
+<th>Social Pillar Score (ESG Rating)</th>
+<th>Economic Pillar Score ( Beta)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Measures a company’s impact on living and non-living natural systems, including the air, land and water, as well as complete ecosystems.</td>
+<td>Measures a company’s capacity to generate trust and loyalty with its workforce, customers and society through its use of best management practices.</td>
+<td>A measure of how much the stock moves for a given move in the market.</td>
+</tr>
+</tbody>
+</table>
+<p>Note, the Economic score was further computed with the Capital Asset Pricing Model (CAPM), which is CAPM = Risk-free rate+Beta*(Risk Premium), where risk-free rate and risk premium in Switzerland is 1.135% <a href="https://www.worldgovernmentbonds.com/bond-historical-data/switzerland/10-years/">Source: World Government Bonds</a> and 5.5% <a href="https://pages.stern.nyu.edu/~adamodar/New_Home_Page/datafile/ctryprem.html">Source: NYU</a> respectively.</p>
+<p>Data was collected based on completeness. As such, despite the SIX listing 250 stocks, the project at hand uses 187. One stock, IGEA Pharma NV, was excluded as it was an extremely negative outlier that terribly affected the scale of the entire visualization.</p>
+</section>
+<section id="constructing-sustainable-and-at-risk-criteria" class="level6">
+<h6 class="anchored" data-anchor-id="constructing-sustainable-and-at-risk-criteria">Constructing “Sustainable” and “At Risk Criteria”</h6>
+<p>The <strong>Sustainability Criterion</strong> was defined as Environmental Score ≥ 70 (out of 100), Social ≥ 70 (out of 100); and Economic score ≥ 6.64% (Average Market Return). Consequently, the standardized scores were 1.05, 0.83 and 0, respectively. <strong>At Risk Criterion</strong> was defined as: Environmental Score ≤ 30 (out of 100); Social ≤ 30; and Economic score ≤ 3.34% (one standard deviation below Market Average Return). Consequently, the standardized scores were -0.30, -0.68 and -1 respectively. Conditions are based on core financial theories.</p>
+</section>
+<section id="data-for-sri-portfolios" class="level6">
+<h6 class="anchored" data-anchor-id="data-for-sri-portfolios">Data for SRI Portfolios</h6>
+<p>Regarding the Negative Screening and Best in Class Approach, using the ESG data collected, I easily constructed said portfolios. However, for the Thematic Approach and ESG integration, I replicated existing funds employing these strategies. They are the <a href="https://www.swissfunddata.ch/sfdpub/en/funds/show/23846">“Ethos Swiss Governance Index Large”</a> and the <a href="https://www.swissfunddata.ch/sfdpub/en/funds/show/134718">“ETHOS II - Ethos Swiss Sustainable Equities -A”</a> respectively.</p>
+</section>
+</section>
+<section id="final-visualization" class="level2">
+<h2 class="anchored" data-anchor-id="final-visualization">Final Visualization</h2>
+<p><em>The graph is interactive. Average-sized points represent a stock on the Swiss Exchange. The bigger Orange points represent SRI portfolios, and the Big Black point represents the Market Average.</em></p>
+<div class="cell">
+<div class="cell-output-display">
+
+<div class="plotly html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-15a23056656b787041a7" style="width:100%;height:464px;"></div>
+<script type="application/json" data-for="htmlwidget-15a23056656b787041a7">{"x":{"visdat":{"4a0473c91fe8":["function () ","plotlyVisDat"],"4a04dc37a6":["function () ","data"],"4a04508f25bd":["function () ","data"],"4a04731e62ce":["function () ","data"]},"cur_data":"4a04731e62ce","attrs":{"4a0473c91fe8":{"x":{},"y":{},"z":{},"text":{},"hoverinfo":"text+xyz","mode":"markers","showlegend":false,"marker":{"size":4,"color":{},"colorscale":[[0,"red"],[0.5,"yellow"],[1,"green"]],"opacity":1,"line":{"color":"rgba(0, 0, 0, 0)","width":0}},"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"scatter3d"},"4a04dc37a6":{"x":{},"y":{},"z":{},"text":{},"hoverinfo":"text+xyz","mode":"markers","showlegend":false,"marker":{"size":8,"color":"orange","colorscale":[[0,"red"],[0.5,"yellow"],[1,"green"]],"opacity":1,"line":{"color":"rgba(0, 0, 0, 0)","width":0}},"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"scatter3d","inherit":true},"4a04508f25bd":{"x":{},"y":{},"z":{},"text":{},"hoverinfo":"text+xyz","mode":"markers","showlegend":false,"marker":{"size":8,"color":"black","colorscale":[[0,"red"],[0.5,"yellow"],[1,"green"]],"opacity":1,"line":{"color":"rgba(0, 0, 0, 0)","width":0}},"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"scatter3d","inherit":true},"4a04508f25bd.1":{"x":[0,0,3.289814904,3.289814904,0,0,3.289814904,3.289814904],"y":[1.05,1.05,1.05,1.05,1.9676168570000001,1.9676168570000001,1.9676168570000001,1.9676168570000001],"z":[0.82999999999999996,1.8681878220000001,0.82999999999999996,1.8681878220000001,0.82999999999999996,1.8681878220000001,0.82999999999999996,1.8681878220000001],"text":{},"hoverinfo":"none","mode":"markers","showlegend":false,"marker":{"size":4,"color":{},"colorscale":[[0,"red"],[0.5,"yellow"],[1,"green"]],"opacity":1,"line":{"color":"rgba(0, 0, 0, 0)","width":0}},"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"mesh3d","facecolor":["green","green","green","green","green","green","green","green"],"opacity":0.20000000000000001,"inherit":true},"4a04508f25bd.2":{"x":[-3.1086064069999999,-3.1086064069999999,-1,-1,-3.1086064069999999,-3.1086064069999999,-1,-1],"y":[-0.29999999999999999,-0.29999999999999999,-0.29999999999999999,-0.29999999999999999,-1.3124949340000001,-1.3124949340000001,-1.3124949340000001,-1.3124949340000001],"z":[-0.68000000000000005,-1.77268577,-0.68000000000000005,-1.77268577,-0.68000000000000005,-1.77268577,-0.68000000000000005,-1.77268577],"text":{},"hoverinfo":"none","mode":"markers","showlegend":false,"marker":{"size":4,"color":{},"colorscale":[[0,"red"],[0.5,"yellow"],[1,"green"]],"opacity":1,"line":{"color":"rgba(0, 0, 0, 0)","width":0}},"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"mesh3d","facecolor":["red","red","red","red","red","red","red","red"],"opacity":0.20000000000000001,"inherit":true},"4a04508f25bd.3":{"x":[0,0],"y":[1.05,1.9676168570000001],"z":[0.82999999999999996,0.82999999999999996],"text":{},"hoverinfo":"none","mode":"lines","showlegend":false,"marker":{"size":4,"color":{},"colorscale":[[0,"red"],[0.5,"yellow"],[1,"green"]],"opacity":1,"line":{"color":"rgba(0, 0, 0, 0)","width":0}},"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"scatter3d","line":{"color":"green","width":2},"inherit":true},"4a04508f25bd.4":{"x":[0,0],"y":[1.05,1.9676168570000001],"z":[1.8681878220000001,1.8681878220000001],"text":{},"hoverinfo":"none","mode":"lines","showlegend":false,"marker":{"size":4,"color":{},"colorscale":[[0,"red"],[0.5,"yellow"],[1,"green"]],"opacity":1,"line":{"color":"rgba(0, 0, 0, 0)","width":0}},"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"scatter3d","line":{"color":"green","width":2},"inherit":true},"4a04508f25bd.5":{"x":[3.289814904,3.289814904],"y":[1.05,1.9676168570000001],"z":[0.82999999999999996,0.82999999999999996],"text":{},"hoverinfo":"none","mode":"lines","showlegend":false,"marker":{"size":4,"color":{},"colorscale":[[0,"red"],[0.5,"yellow"],[1,"green"]],"opacity":1,"line":{"color":"rgba(0, 0, 0, 0)","width":0}},"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"scatter3d","line":{"color":"green","width":2},"inherit":true},"4a04508f25bd.6":{"x":[3.289814904,3.289814904],"y":[1.05,1.9676168570000001],"z":[1.8681878220000001,1.8681878220000001],"text":{},"hoverinfo":"none","mode":"lines","showlegend":false,"marker":{"size":4,"color":{},"colorscale":[[0,"red"],[0.5,"yellow"],[1,"green"]],"opacity":1,"line":{"color":"rgba(0, 0, 0, 0)","width":0}},"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"scatter3d","line":{"color":"green","width":2},"inherit":true},"4a04508f25bd.7":{"x":[0,0,3.289814904,3.289814904,0],"y":[1.05,1.05,1.05,1.05,1.05],"z":[0.82999999999999996,1.8681878220000001,1.8681878220000001,0.82999999999999996,0.82999999999999996],"text":{},"hoverinfo":"none","mode":"lines","showlegend":false,"marker":{"size":4,"color":{},"colorscale":[[0,"red"],[0.5,"yellow"],[1,"green"]],"opacity":1,"line":{"color":"rgba(0, 0, 0, 0)","width":0}},"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"scatter3d","line":{"color":"green","width":2},"inherit":true},"4a04508f25bd.8":{"x":[0,0,3.289814904,3.289814904,0],"y":[1.9676168570000001,1.9676168570000001,1.9676168570000001,1.9676168570000001,1.9676168570000001],"z":[0.82999999999999996,1.8681878220000001,1.8681878220000001,0.82999999999999996,0.82999999999999996],"text":{},"hoverinfo":"none","mode":"lines","showlegend":false,"marker":{"size":4,"color":{},"colorscale":[[0,"red"],[0.5,"yellow"],[1,"green"]],"opacity":1,"line":{"color":"rgba(0, 0, 0, 0)","width":0}},"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"scatter3d","line":{"color":"green","width":2},"inherit":true},"4a04508f25bd.9":{"x":[-3.1086064069999999,-3.1086064069999999],"y":[-0.29999999999999999,-1.3124949340000001],"z":[-0.68000000000000005,-0.68000000000000005],"text":{},"hoverinfo":"none","mode":"lines","showlegend":false,"marker":{"size":4,"color":{},"colorscale":[[0,"red"],[0.5,"yellow"],[1,"green"]],"opacity":1,"line":{"color":"rgba(0, 0, 0, 0)","width":0}},"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"scatter3d","line":{"color":"red","width":2},"inherit":true},"4a04508f25bd.10":{"x":[-3.1086064069999999,-3.1086064069999999],"y":[-0.29999999999999999,-1.3124949340000001],"z":[-1.77268577,-1.77268577],"text":{},"hoverinfo":"none","mode":"lines","showlegend":false,"marker":{"size":4,"color":{},"colorscale":[[0,"red"],[0.5,"yellow"],[1,"green"]],"opacity":1,"line":{"color":"rgba(0, 0, 0, 0)","width":0}},"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"scatter3d","line":{"color":"red","width":2},"inherit":true},"4a04508f25bd.11":{"x":[-1,-1],"y":[-0.29999999999999999,-1.3124949340000001],"z":[-0.68000000000000005,-0.68000000000000005],"text":{},"hoverinfo":"none","mode":"lines","showlegend":false,"marker":{"size":4,"color":{},"colorscale":[[0,"red"],[0.5,"yellow"],[1,"green"]],"opacity":1,"line":{"color":"rgba(0, 0, 0, 0)","width":0}},"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"scatter3d","line":{"color":"red","width":2},"inherit":true},"4a04508f25bd.12":{"x":[-1,-1],"y":[-0.29999999999999999,-1.3124949340000001],"z":[-1.77268577,-1.77268577],"text":{},"hoverinfo":"none","mode":"lines","showlegend":false,"marker":{"size":4,"color":{},"colorscale":[[0,"red"],[0.5,"yellow"],[1,"green"]],"opacity":1,"line":{"color":"rgba(0, 0, 0, 0)","width":0}},"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"scatter3d","line":{"color":"red","width":2},"inherit":true},"4a04508f25bd.13":{"x":[-3.1086064069999999,-3.1086064069999999,-1,-1,-3.1086064069999999],"y":[-0.29999999999999999,-0.29999999999999999,-0.29999999999999999,-0.29999999999999999,-0.29999999999999999],"z":[-0.68000000000000005,-1.77268577,-1.77268577,-0.68000000000000005,-0.68000000000000005],"text":{},"hoverinfo":"none","mode":"lines","showlegend":false,"marker":{"size":4,"color":{},"colorscale":[[0,"red"],[0.5,"yellow"],[1,"green"]],"opacity":1,"line":{"color":"rgba(0, 0, 0, 0)","width":0}},"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"scatter3d","line":{"color":"red","width":2},"inherit":true},"4a04508f25bd.14":{"x":[-3.1086064069999999,-3.1086064069999999,-1,-1,-3.1086064069999999],"y":[-1.3124949340000001,-1.3124949340000001,-1.3124949340000001,-1.3124949340000001,-1.3124949340000001],"z":[-0.68000000000000005,-1.77268577,-1.77268577,-0.68000000000000005,-0.68000000000000005],"text":{},"hoverinfo":"none","mode":"lines","showlegend":false,"marker":{"size":4,"color":{},"colorscale":[[0,"red"],[0.5,"yellow"],[1,"green"]],"opacity":1,"line":{"color":"rgba(0, 0, 0, 0)","width":0}},"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"scatter3d","line":{"color":"red","width":2},"inherit":true},"4a04731e62ce":{"x":{},"y":{},"z":{},"text":{},"hoverinfo":"text","mode":"text","showlegend":false,"marker":{"size":1,"color":"rgba(0,0,0,0)","colorscale":[[0,"red"],[0.5,"yellow"],[1,"green"]],"opacity":1,"line":{"color":"rgba(0, 0, 0, 0)","width":0}},"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"scatter3d","textfont":{"color":{},"size":12},"inherit":true}},"layout":{"width":1000,"height":600,"margin":{"b":50,"l":50,"t":30,"r":50,"pad":4},"title":"Sustainability Visualization of Swiss Stocks & SRI portfolios","scene":{"xaxis":{"title":"Economic"},"yaxis":{"title":"Environmental"},"zaxis":{"title":"Social"}},"hovermode":"closest","showlegend":false,"legend":{"yanchor":"top","y":0.5}},"source":"A","config":{"modeBarButtonsToAdd":["hoverclosest","hovercompare"],"showSendToCloud":false},"data":[{"x":[0.49637330749906533,0.87779737876579189,-1.3545059085344235,1.7605241365456736,-1.3143806303987426,-0.74907819335762005,-0.80829682692084914,-0.18271440111999415,-0.69703977955529284,-1.0160977123997228,0.13062548202567278,2.3090464889173106,-0.2682246131246448,-1.3219771713542932,1.1340353903728027,-0.079807773585527722,1.418368832317499,0.51455968375542938,0.7602137397115698,2.3423826640636345,1.0470708184349142,0.23498480858340334,0.05194019729154465,-0.42032868843602833,-0.14331421521704121,-1.2887857638921609,0.7814030257588136,-1.1304852227324067,0.64351891636320213,-0.98957334695085208,0.20399223622005289,-0.90637671145597776,-1.3890743307305364,1.2122670853667912,-0.43384787568054739,0.3474187020108046,0.041311560810413102,0.40474496932414544,-0.33988778979154993,0.86783777343898205,-1.2040307828432635,-0.068891449352433382,0.20648347520050256,-0.050951668127247898,-0.25900969909149035,-0.54844156159486057,0.50467486837742737,1.3549690304917832,-0.94548064764635242,-1.2576522546467388,1.069849452191532,-1.0342899069027336,0.900940890653947,-0.9578905329337658,-0.18377894146168766,0.71794026171714909,1.0199064902230865,-0.038023602831871492,-0.32347958650263847,-0.3901981019069331,0.32575623210109206,-1.4314614904431497,-0.48089191151004257,-0.31999783553472166,0.022229625577600814,0.21359457393095935,0.85348057426846535,-0.85892344133537069,1.11442389806007,-0.55763241415779785,0.29696917437311837,0.79357384373931861,-0.15131746359785256,0.95442543771587141,-0.31611363112532376,0.25021238541386415,-1.035135181360243,-1.7222791293753286,0.90365840421935206,0.64712927389733998,0.30813075503248388,0.21160597586891555,0.35944830331219602,-0.13878297886631671,1.0210568709975605,-1.1900952359469605,-0.85807346720689981,0.20902829823512425,0.86557911776128582,-0.0097567531259870627,0.84278108249390993,0.44253412655959401,3.2354099714153639,-0.17054608572775334,0.11073450365870777,0.13927298800696736,0.63257825076196672,0.7138612595671745,0.40584615345744313,-0.36454835917779921,-0.37630314337216902,-0.97725403021054957,-0.13509283904769218,1.9275306725733357,-0.22941994386631037,0.1765471541347054,-1.2925447170831963,3.2898149043351204,0.55218399649503436,0.55466197337121825,0.87147836024141057,0.303065553589764,-0.75276212077698712,-1.5420089383024713,0.4755546292804379,-0.49313555804756704,-0.39805363690196621,-0.1430839805533993,0.2900820154919575,0.12726129781464135,0.12532301671517873,0.70353381783501334,-1.1370917756941537,0.502830093261601,-0.2308822887027504,0.69598399731830296,-0.86940068722900798,1.0126556875367858,0.37384896432592996,-0.66342059207314275,0.23958675760294249,-0.67943112156496099,-1.241417473692781,0.45235172431648496,-0.98256945739250712,-0.4773830323985967,-0.095987001060464289,0.072191031916927231,-0.96254103038746008,-0.2354615144990046,0.11730081632648397,-1.0069278339762389,-3.1086064074308482,0.44824169175067419,0.65937338404159862,-0.082640151948874641,-0.82950196490326078,0.074193718659417957,-0.64991393096748884,-0.2581423371208163,0.44221973875327847,0.72734789504209996,-0.27234064682693548,0.33599284902415405,-0.2715634701976366,-0.54881435176659077,1.0138804317212704,-0.69233602601014999,-0.11246463273207076,-0.34006026062297739,0.92089839078328806,0.38576083297089392,1.5020270435338665,0.53883237264691752,0.43843036327535967,-0.379405426718461,0.94160052959249851,0.79187745562503919,-0.78047937066927597,0.072191031916927231,0.39736851003917889,0.12270435430930531,1.2561100969444143,-0.73680992574799875,-0.47485020944782097,0.069102891918409765,-1.1217596342182206,0.680845545424696,-0.73071243037742839,-0.78491824085681927,0.14169200940768115,2.4373883446967946,0.10373203613026427,0.59751759277984295,-1.2452266555299285,-0.6694973588206744,-0.24372907057988],"y":[1.967616857019163,0.18678734463273511,-0.48001044157637279,-1.3124949340365997,-1.3124949340365997,0.075890354731469351,-1.3124949340365997,0.97009264619654345,-0.29759051969606776,-1.3124949340365997,-0.38932785817983212,0.31371591546034633,-0.14342287442035842,-1.3124949340365997,0.73019275001565043,-1.3124949340365997,0.13432161704822224,0.078448398904956779,-1.3124949340365997,1.0845330498802228,1.3364471229650474,0.20607960801897854,0.47675132874612214,1.1180788495190341,-0.65368859203823615,0.052896068159574018,-0.012991502222715451,0.58595905476189836,0.1826491884197681,1.0861478949227426,-0.075650869665820117,-0.24718150861006846,0.76463950578350626,-0.8256077497890002,-0.39872245715347326,-1.3124949340365997,0.86629861281818776,0.20157351092391329,0.090187083711959215,1.0630527182495404,-1.2486691382045496,-0.38283876255122073,1.003754494700116,-0.11474506517163632,-1.3124949340365997,-0.35901604541464693,-1.3124949340365997,0.060728138706280105,-1.3124949340365997,-0.96098938980487281,0.051465854031977502,-0.86040045561927558,-1.3124949340365997,0.69517466621176094,-0.048918137103427489,1.6903109842281967,0.41684095817957323,-1.3124949340365997,-0.45214684758287499,1.1784772332424627,-0.15716220681861595,-1.3124949340365997,-1.3124949340365997,-1.1439394782104877,0.14801694574700516,0.1538456278974622,0.56497887228361887,0.92290036633955375,0.60232087640180032,-1.3124949340365997,1.7393713573221117,1.5968747278214774,1.1350893464139891,1.3774691137133441,-1.3124949340365997,0.40964272638202831,0.039513054195740707,-1.3124949340365997,-0.68113367179704831,1.1846647863631989,0.33647801235952984,1.6113265593263009,0.53888781640918026,1.0286002094532249,-0.19974625349484854,-0.98243812350891158,-0.68439126532002581,-0.8848276216808606,-0.47535578097352138,-0.24880719034486623,-1.3124949340365997,1.2882776340438542,-1.3124949340365997,-0.59080090566047327,-0.37959073995490344,-1.3124949340365997,0.98908875520912654,-1.0013132738968928,0.57305156113418976,0.71881440540628794,1.3027717298980412,1.2340471490769997,-0.23495598909379106,-1.0081698051621333,0.83582034733825317,1.3393568793716801,-1.3124949340365997,0.63516675547339785,-0.47867399881317535,-0.22553268871931811,0.051026886781629879,-0.90086144429666259,1.0011774246899343,-1.3124949340365997,0.93843903946863305,0.03434328113023713,1.7122048826007135,1.5659939606282978,-1.0245390434548935,-1.3124949340365997,-1.0685236484645346,1.4843792165849645,-0.47510457214892021,-1.2629197999700961,0.66320707207011864,-0.98243812350891158,-1.3124949340365997,1.3945379488909859,1.4429403987167335,-0.87724451239985102,-0.48442753001995692,0.84364909736223082,0.3772599640916201,0.33997640033834586,-1.3124949340365997,1.8069002301829022,0.28742518311091508,-1.3124949340365997,-0.97390328069526133,-1.3124949340365997,0.16578134176393208,1.6018653174616211,-1.3124949340365997,-0.11105445104971334,-0.55426197929291576,0.79777618068721345,-1.3124949340365997,1.1700962190380595,-1.3124949340365997,1.8498382829429887,1.726930961686894,1.920290583799533,-0.56568954798024706,1.2323653876563545,-1.3124949340365997,0.39871607506600032,-0.77727244244365823,0.27996825056849073,0.98491062212932479,-0.39172720703606811,0.31149837277007542,0.42562722111193996,1.5832283793376676,-0.71060004972160795,-0.56140565464413117,0.15248470480501419,0.47281249049085561,-1.3124949340365997,-0.087335606018289394,1.9475003772515536,-0.10791479649965102,1.7774839257031652,-0.29110892623248813,-0.023156636174552127,-0.16961423987870855,0.063981545352450986,-1.1762885050862062,1.3513017921558905,0.53062751639103356,-1.3124949340365997,1.2180980553889333,-1.2520576745071124,0.65153096292522894,-0.59257471982300824,-1.3124949340365997,0.69320991228261397,1.7737263339328246],"z":[1.5440240182715239,0.95090049508118257,-0.20113017406006323,-1.3743319031940409,-1.4165109604441763,-0.77389312745327687,-1.7141817187157771,0.95244911632500695,0.08066122447967003,-1.602716337420109,-0.35483774141923519,1.0568698429137831,-0.70871042593887501,-1.3700670768597156,1.1031252006167298,-1.5581062814034738,0.39768074542549037,0.43128248323956975,-1.3795439407317853,1.2020536540922566,0.73897441017621035,-0.51827519444613768,0.44043016879647962,1.340895055577328,-0.70745762082867514,-1.0803746631730278,0.30264586533970689,1.3423771232877497,1.0523408634693099,-0.36885483815318926,-0.92712837745137688,-0.52999109891804708,0.2494245652928779,0.15576589849414105,-0.51312883000445086,-0.49493354679267859,-0.10860934945969,0.88585771882764963,-0.36598637985279342,1.1555150835248342,-0.33828849869753941,-0.63012543439038682,1.5626590975054471,0.41769446377820152,-0.91578133449036792,0.68798720652958101,-0.54770551701239922,0.70401368938634301,-1.3700670768597156,-0.76848991806732636,0.41565825771968917,0.91174353519650086,-1.4109816714712731,1.4115648216937042,-0.33381428409951547,1.7198228187784601,0.22371496423198023,-1.6621041529924478,-0.52845909202081176,0.19376690081779527,0.10637701468489537,-1.1474065141113956,-1.3841014800913352,-1.2639902004470958,0.20116212396925462,0.63690421726775359,0.15155009969970326,0.60294705400044502,1.1747437381153465,-1.4836391454239322,1.7027389159932702,1.5709343380061325,0.97095294700509183,1.5151366870182323,-1.4955937631879088,0.62736565438018987,-0.18131743288020355,-1.7726857699135707,-0.58111101004305221,0.92315727597710495,1.1454331805779738,1.1484099166850865,0.0070171142483602357,0.51492471857849853,0.98088828076189483,-0.92757022327010941,-0.22848322372638091,-0.52631904960014997,0.059755939379287741,-0.42815613386473939,-1.0527502579611023,0.93572109690748717,-1.7594708402699548,-0.53902611974322778,-1.0095416251266616,-0.73340503534905277,0.84058294734623562,-1.2219416317061014,0.051785431001213696,0.034297412498465803,1.4218922546264061,0.53596833422174517,-0.73453611750628756,-0.12162273152126198,1.2253055961550536,1.6344537585238115,-1.6535871449347304,0.079778309418033003,-0.2316965120220347,0.57944378338038427,-0.83250211889776971,-0.98142166445809176,1.034856118023431,0.90514383880377369,0.96844645622966952,-0.68200410458671079,1.5305212616855242,1.6866221456780111,-1.2581993463875847,-1.0937561866096437,-1.0232730390303133,0.9529618733710794,-0.41178365505463771,-1.3164338970646778,0.42146209228705067,0.15858319726178627,-1.7195717084230553,1.0312087323700725,0.29699674922972408,-0.83045689620937913,0.3358131706839263,0.59249179668638574,-0.62112779733629353,1.4453771016903172,-1.0701865649142803,1.8681878222398285,0.13979921981346632,-1.7141817187157771,-0.83373051767159112,-1.6568591998365934,0.28793774078906931,0.70930149162092759,-1.7674571006777673,0.21366415435990865,0.20547959895039589,1.0401589235695812,-1.668726395695467,1.5710302907221938,-1.1372240406460843,1.3690358827678029,0.92822107213589966,0.88940908877459579,-0.4583014271319073,1.6600258121919451,-1.2942901844665122,0.67694308191433927,0.11879630498047808,-0.28996933889548954,1.2235729064751462,0.20904428021391161,-0.075213057327720337,0.94340816006762351,0.95833787960005412,0.93607799823195836,0.15824521238623593,0.77397369194154508,1.4799931554125043,-1.0331133548614264,0.17171552658293987,1.3689225660136319,-0.50592629722025106,0.89912204348895319,-0.1738785130673508,-1.2293879629908826,-0.2206322505713445,0.64104240936866419,-1.1206647533752059,0.1904979987014809,0.61382527504918238,-1.0891183052305122,-0.079188422318553234,-1.3684862029654663,0.25672048772930839,-0.47485389445886506,-1.6167171531381457,-0.22629036896421401,1.6445836453049021],"text":["Abb Ltd: Sustainable","Adecco Group AG: Acceptable","Adval Tech Holding AG: Acceptable","Addex Therapeutics Ltd: Acceptable","Aevis Victoria SA: At Risk","Aluflexpack AG: Acceptable","Airesis SA: Acceptable","Alcon AG: Acceptable","Allreal Holding AG: Acceptable","Alpine Select AG: At Risk","Also Holding AG: Acceptable","ams Osram AG: Acceptable","APG SGA SA: Acceptable","AP Alternative Portfolio AG: At Risk","Arbonia AG: Acceptable","Arundel AG: Acceptable","Aryzta AG: Acceptable","Ascom Holding AG: Acceptable","Asmallworld AG: Acceptable","Autoneum Holding AG: Sustainable","Julius Baer Gruppe AG: Acceptable","Baloise Holding AG: Acceptable","Bachem Holding AG: Acceptable","Barry Callebaut AG: Acceptable","Bellevue Group AG: Acceptable","Banque Cantonale de Geneve: Acceptable","Burckhardt Compression Holding AG: Acceptable","Banque Cantonale Vaudoise: Acceptable","Belimo Holding AG: Acceptable","Bell Food Group AG: Acceptable","BB Biotech AG: Acceptable","BKW AG: Acceptable","Basellandschaftliche Kantonalbank: Acceptable","Bossard Holding AG: Acceptable","Burkhalter Holding AG: Acceptable","Basilea Pharmaceutica AG Allschwil: Acceptable","Bucher Industries AG: Acceptable","Bystronic AG: Acceptable","Calida Holding AG: Acceptable","Compagnie Financiere Richemont SA: Sustainable","Compagnie Financiere Tradition SA: Acceptable","Cicor Technologies Ltd: Acceptable","Clariant AG: Acceptable","Coltene Holding AG: Acceptable","Crealogix Holding AG: Acceptable","Cembra Money Bank AG: Acceptable","Cosmo Pharmaceuticals NV: Acceptable","Comet Holding AG: Acceptable","Castle Private Equity AG: Acceptable","CPH Chemie und Papier Holding AG: At Risk","Daetwyler Holding AG: Acceptable","Datacolor AG: Acceptable","Dottikon Es Holding AG: Acceptable","DKSH Holding AG: Acceptable","DocMorris AG: Acceptable","Dormakaba Holding AG: Sustainable","Dufry AG: Acceptable","Eeii AG: Acceptable","EFG International AG: Acceptable","Emmi AG: Acceptable","Ems Chemie Holding AG: Acceptable","EPH European Property Holdings Plc: At Risk","Edisun Power Europe AG: Acceptable","Evolva Holding SA: Acceptable","Flughafen Zuerich AG: Acceptable","Forbo Holding AG: Acceptable","Feintool International Holding AG: Acceptable","Galenica AG: Acceptable","GAM Holding AG: Acceptable","Carlo Gavazzi Holding AG: Acceptable","Geberit AG: Sustainable","Georg Fischer AG: Sustainable","Givaudan SA: Acceptable","Gurit Holding AG: Sustainable","HBM Healthcare Investments AG: Acceptable","Helvetia Holding AG: Acceptable","HIAG Immobilien Holding AG: Acceptable","Highlight Event and Entertainment AG: At Risk","Hochdorf Holding AG: Acceptable","Holcim AG: Sustainable","Huber+Suhner AG: Acceptable","Idorsia Ltd: Sustainable","Inficon Holding AG: Acceptable","Implenia AG: Acceptable","Interroll Holding AG: Acceptable","Investis Holding SA: At Risk","Intershop Holding AG: Acceptable","Jungfraubahn Holding AG: Acceptable","Kardex Holding AG: Acceptable","Keda Industrial Group Co Ltd: Acceptable","Klingelnberg AG: Acceptable","Kuehne und Nagel International AG: Sustainable","Kinarus Therapeutics Holding AG: Acceptable","Komax Holding AG: Acceptable","Kudelski SA: Acceptable","Kuros Biosciences AG: Acceptable","Landis+Gyr Group AG: Acceptable","Leclanche SA: Acceptable","Lem Holding SA: Acceptable","Leonteq AG: Acceptable","Chocoladefabriken Lindt & Spruengli AG: Acceptable","Liechtensteinische Landesbank AG: Acceptable","Lalique Group SA: Acceptable","Lastminute.com NV: Acceptable","Logitech International SA: Acceptable","Lonza Group AG: Sustainable","Luzerner Kantonalbank AG: At Risk","Meyer Burger Technology AG: Acceptable","MCH Group AG: Acceptable","Medartis Holding AG: Acceptable","Metall Zug AG: Acceptable","Mikron Holding AG: Acceptable","Mobimo Holding AG: Acceptable","Molecular Partners AG: Acceptable","Medacta Group SA: Acceptable","Mobilezone Holding AG: Acceptable","Nestle SA: Acceptable","Novartis AG: Acceptable","Newron Pharmaceuticals SpA: Acceptable","Obseva SA: Acceptable","Orascom Development Holding AG: Acceptable","OC Oerlikon Corporation AG Pfaeffikon: Sustainable","Orell Fuessli AG: Acceptable","One Swiss Bank SA: Acceptable","Orior AG: Acceptable","Peach Property Group AG: Acceptable","Private Equity Holding AG: Acceptable","Partners Group Holding AG: Sustainable","PIERER Mobility AG: Acceptable","Phoenix Mecano AG: Acceptable","PolyPeptide Group AG: Acceptable","PSP Swiss Property AG: Acceptable","Romande Energie Holding SA: Acceptable","Rieter Holding AG: Acceptable","Relief Therapeutics Holding SA: Acceptable","Roche Holding AG: Acceptable","Von Roll Holding AG: Acceptable","ENR Russia Invest SA: Acceptable","Schaffner Holding AG: Acceptable","Santhera Pharmaceuticals Holding AG: Acceptable","Schindler Holding AG: Acceptable","Swisscom AG: Acceptable","Sandpiper Digital Payments AG: At Risk","Sensirion Holding AG: Acceptable","SFS Group AG: Acceptable","Siegfried Holding AG: Acceptable","St Galler Kantonalbank AG: Acceptable","SGS SA: Sustainable","SHL Telemedicine Ltd: Acceptable","SIG Group AG: Acceptable","Sika AG: Sustainable","Swiss Life Holding AG: Sustainable","Schweizerische Nationalbank: Acceptable","Sonova Holding AG: Sustainable","Spexis AG: Acceptable","Swiss Prime Site AG: Acceptable","Swissquote Group Holding SA: Acceptable","Stadler Rail AG: Acceptable","Swiss Re AG: Acceptable","Starrag Group Holding AG: Acceptable","Swiss Steel Holding AG: Acceptable","Straumann Holding AG: Acceptable","Sulzer AG: Sustainable","Softwareone Holding AG: Acceptable","Schweiter Technologies AG: Acceptable","Tecan Group AG: Acceptable","Temenos AG: Acceptable","Tornos Holding AG: Acceptable","TX Group AG: Acceptable","UBS Group AG: Sustainable","U Blox Holding AG: Acceptable","Swatch Group AG: Sustainable","VAT Group AG: Acceptable","Varia US Properties AG: Acceptable","Valiant Holding AG: Acceptable","Vetropack Holding SA: Acceptable","Valartis Group AG: At Risk","Vontobel Holding AG: Acceptable","VP Bank AG: Acceptable","VZ Holding AG: Acceptable","V-ZUG Holding AG: Acceptable","Wisekey International Holding AG: Acceptable","Ypsomed Holding AG: Acceptable","Zehnder Group AG: Acceptable","Zueblin Immobilien Holding AG: At Risk","Zug Estates Holding AG: Acceptable","Zurich Insurance Group AG: Acceptable"],"hoverinfo":["text+xyz","text+xyz","text+xyz","text+xyz","text+xyz","text+xyz","text+xyz","text+xyz","text+xyz","text+xyz","text+xyz","text+xyz","text+xyz","text+xyz","text+xyz","text+xyz","text+xyz","text+xyz","text+xyz","text+xyz","text+xyz","text+xyz","text+xyz","text+xyz","text+xyz","text+xyz","text+xyz","text+xyz","text+xyz","text+xyz","text+xyz","text+xyz","text+xyz","text+xyz","text+xyz","text+xyz","text+xyz","text+xyz","text+xyz","text+xyz","text+xyz","text+xyz","text+xyz","text+xyz","text+xyz","text+xyz","text+xyz","text+xyz","text+xyz","text+xyz","text+xyz","text+xyz","text+xyz","text+xyz","text+xyz","text+xyz","text+xyz","text+xyz","text+xyz","text+xyz","text+xyz","text+xyz","text+xyz","text+xyz","text+xyz","text+xyz","text+xyz","text+xyz","text+xyz","text+xyz","text+xyz","text+xyz","text+xyz","text+xyz","text+xyz","text+xyz","text+xyz","text+xyz","text+xyz","text+xyz","text+xyz","text+xyz","text+xyz","text+xyz","text+xyz","text+xyz","text+xyz","text+xyz","text+xyz","text+xyz","text+xyz","text+xyz","text+xyz","text+xyz","text+xyz","text+xyz","text+xyz","text+xyz","text+xyz","text+xyz","text+xyz","text+xyz","text+xyz","text+xyz","text+xyz","text+xyz","text+xyz","text+xyz","text+xyz","text+xyz","text+xyz","text+xyz","text+xyz","text+xyz","text+xyz","text+xyz","text+xyz","text+xyz","text+xyz","text+xyz","text+xyz","text+xyz","text+xyz","text+xyz","text+xyz","text+xyz","text+xyz","text+xyz","text+xyz","text+xyz","text+xyz","text+xyz","text+xyz","text+xyz","text+xyz","text+xyz","text+xyz","text+xyz","text+xyz","text+xyz","text+xyz","text+xyz","text+xyz","text+xyz","text+xyz","text+xyz","text+xyz","text+xyz","text+xyz","text+xyz","text+xyz","text+xyz","text+xyz","text+xyz","text+xyz","text+xyz","text+xyz","text+xyz","text+xyz","text+xyz","text+xyz","text+xyz","text+xyz","text+xyz","text+xyz","text+xyz","text+xyz","text+xyz","text+xyz","text+xyz","text+xyz","text+xyz","text+xyz","text+xyz","text+xyz","text+xyz","text+xyz","text+xyz","text+xyz","text+xyz","text+xyz","text+xyz","text+xyz","text+xyz","text+xyz","text+xyz","text+xyz"],"mode":"markers","showlegend":false,"marker":{"color":[1.5440240182715239,0.95090049508118257,-0.20113017406006323,-1.3743319031940409,-1.4165109604441763,-0.77389312745327687,-1.7141817187157771,0.95244911632500695,0.08066122447967003,-1.602716337420109,-0.35483774141923519,1.0568698429137831,-0.70871042593887501,-1.3700670768597156,1.1031252006167298,-1.5581062814034738,0.39768074542549037,0.43128248323956975,-1.3795439407317853,1.2020536540922566,0.73897441017621035,-0.51827519444613768,0.44043016879647962,1.340895055577328,-0.70745762082867514,-1.0803746631730278,0.30264586533970689,1.3423771232877497,1.0523408634693099,-0.36885483815318926,-0.92712837745137688,-0.52999109891804708,0.2494245652928779,0.15576589849414105,-0.51312883000445086,-0.49493354679267859,-0.10860934945969,0.88585771882764963,-0.36598637985279342,1.1555150835248342,-0.33828849869753941,-0.63012543439038682,1.5626590975054471,0.41769446377820152,-0.91578133449036792,0.68798720652958101,-0.54770551701239922,0.70401368938634301,-1.3700670768597156,-0.76848991806732636,0.41565825771968917,0.91174353519650086,-1.4109816714712731,1.4115648216937042,-0.33381428409951547,1.7198228187784601,0.22371496423198023,-1.6621041529924478,-0.52845909202081176,0.19376690081779527,0.10637701468489537,-1.1474065141113956,-1.3841014800913352,-1.2639902004470958,0.20116212396925462,0.63690421726775359,0.15155009969970326,0.60294705400044502,1.1747437381153465,-1.4836391454239322,1.7027389159932702,1.5709343380061325,0.97095294700509183,1.5151366870182323,-1.4955937631879088,0.62736565438018987,-0.18131743288020355,-1.7726857699135707,-0.58111101004305221,0.92315727597710495,1.1454331805779738,1.1484099166850865,0.0070171142483602357,0.51492471857849853,0.98088828076189483,-0.92757022327010941,-0.22848322372638091,-0.52631904960014997,0.059755939379287741,-0.42815613386473939,-1.0527502579611023,0.93572109690748717,-1.7594708402699548,-0.53902611974322778,-1.0095416251266616,-0.73340503534905277,0.84058294734623562,-1.2219416317061014,0.051785431001213696,0.034297412498465803,1.4218922546264061,0.53596833422174517,-0.73453611750628756,-0.12162273152126198,1.2253055961550536,1.6344537585238115,-1.6535871449347304,0.079778309418033003,-0.2316965120220347,0.57944378338038427,-0.83250211889776971,-0.98142166445809176,1.034856118023431,0.90514383880377369,0.96844645622966952,-0.68200410458671079,1.5305212616855242,1.6866221456780111,-1.2581993463875847,-1.0937561866096437,-1.0232730390303133,0.9529618733710794,-0.41178365505463771,-1.3164338970646778,0.42146209228705067,0.15858319726178627,-1.7195717084230553,1.0312087323700725,0.29699674922972408,-0.83045689620937913,0.3358131706839263,0.59249179668638574,-0.62112779733629353,1.4453771016903172,-1.0701865649142803,1.8681878222398285,0.13979921981346632,-1.7141817187157771,-0.83373051767159112,-1.6568591998365934,0.28793774078906931,0.70930149162092759,-1.7674571006777673,0.21366415435990865,0.20547959895039589,1.0401589235695812,-1.668726395695467,1.5710302907221938,-1.1372240406460843,1.3690358827678029,0.92822107213589966,0.88940908877459579,-0.4583014271319073,1.6600258121919451,-1.2942901844665122,0.67694308191433927,0.11879630498047808,-0.28996933889548954,1.2235729064751462,0.20904428021391161,-0.075213057327720337,0.94340816006762351,0.95833787960005412,0.93607799823195836,0.15824521238623593,0.77397369194154508,1.4799931554125043,-1.0331133548614264,0.17171552658293987,1.3689225660136319,-0.50592629722025106,0.89912204348895319,-0.1738785130673508,-1.2293879629908826,-0.2206322505713445,0.64104240936866419,-1.1206647533752059,0.1904979987014809,0.61382527504918238,-1.0891183052305122,-0.079188422318553234,-1.3684862029654663,0.25672048772930839,-0.47485389445886506,-1.6167171531381457,-0.22629036896421401,1.6445836453049021],"size":4,"colorscale":[[0,"red"],[0.5,"yellow"],[1,"green"]],"opacity":1,"line":{"color":"rgba(0, 0, 0, 0)","width":0}},"type":"scatter3d","error_y":{"color":"rgba(31,119,180,1)"},"error_x":{"color":"rgba(31,119,180,1)"},"line":{"color":"rgba(31,119,180,1)"},"frame":null},{"x":[-0.11083512082480547,0.22486893694944657,0.088102142812124029,0.34766059410517608],"y":[1.3221524033711831,1.3556596028159247,1.6559203556581743,1.475473652015294],"z":[1.3584190569982937,1.2767538007752914,1.4845612637086629,1.3547187330316279],"text":["ESG Integration: Acceptable","Negative Screening: Sustainable","Thematic Approach: Sustainable","Best in Class Approach: Sustainable"],"hoverinfo":["text+xyz","text+xyz","text+xyz","text+xyz"],"mode":"markers","showlegend":false,"marker":{"color":"orange","size":8,"colorscale":[[0,"red"],[0.5,"yellow"],[1,"green"]],"opacity":1,"line":{"color":"rgba(0, 0, 0, 0)","width":0}},"type":"scatter3d","error_y":{"color":"rgba(255,127,14,1)"},"error_x":{"color":"rgba(255,127,14,1)"},"line":{"color":"rgba(255,127,14,1)"},"frame":null},{"x":[0],"y":[0],"z":[0],"text":"SIX Market: Acceptable","hoverinfo":"text+xyz","mode":"markers","showlegend":false,"marker":{"color":"black","size":8,"colorscale":[[0,"red"],[0.5,"yellow"],[1,"green"]],"opacity":1,"line":{"color":"rgba(0, 0, 0, 0)","width":0}},"type":"scatter3d","error_y":{"color":"rgba(44,160,44,1)"},"error_x":{"color":"rgba(44,160,44,1)"},"line":{"color":"rgba(44,160,44,1)"},"frame":null},{"colorbar":{"title":"Social<br />Social<br />Social<br />z","ticklen":2,"len":0.5,"lenmode":"fraction","y":1,"yanchor":"top"},"colorscale":[["0","rgba(68,1,84,1)"],["0.0416666666666667","rgba(70,19,97,1)"],["0.0833333333333333","rgba(72,32,111,1)"],["0.125","rgba(71,45,122,1)"],["0.166666666666667","rgba(68,58,128,1)"],["0.208333333333333","rgba(64,70,135,1)"],["0.25","rgba(60,82,138,1)"],["0.291666666666667","rgba(56,93,140,1)"],["0.333333333333333","rgba(49,104,142,1)"],["0.375","rgba(46,114,142,1)"],["0.416666666666667","rgba(42,123,142,1)"],["0.458333333333333","rgba(38,133,141,1)"],["0.5","rgba(37,144,140,1)"],["0.541666666666667","rgba(33,154,138,1)"],["0.583333333333333","rgba(39,164,133,1)"],["0.625","rgba(47,174,127,1)"],["0.666666666666667","rgba(53,183,121,1)"],["0.708333333333333","rgba(79,191,110,1)"],["0.75","rgba(98,199,98,1)"],["0.791666666666667","rgba(119,207,85,1)"],["0.833333333333333","rgba(147,214,70,1)"],["0.875","rgba(172,220,52,1)"],["0.916666666666667","rgba(199,225,42,1)"],["0.958333333333333","rgba(226,228,40,1)"],["1","rgba(253,231,37,1)"]],"showscale":true,"x":[0,0,3.289814904,3.289814904,0,0,3.289814904,3.289814904],"y":[1.05,1.05,1.05,1.05,1.9676168570000001,1.9676168570000001,1.9676168570000001,1.9676168570000001],"z":[0.82999999999999996,1.8681878220000001,0.82999999999999996,1.8681878220000001,0.82999999999999996,1.8681878220000001,0.82999999999999996,1.8681878220000001],"text":"SIX Market: Acceptable","hoverinfo":"none","mode":"markers","showlegend":false,"marker":{"size":4,"color":0,"colorscale":[[0,"red"],[0.5,"yellow"],[1,"green"]],"opacity":1,"line":{"color":"rgba(0, 0, 0, 0)","width":0}},"type":"mesh3d","facecolor":["green","green","green","green","green","green","green","green"],"opacity":0.20000000000000001,"frame":null},{"colorbar":{"title":"Social<br />Social<br />Social<br />z","ticklen":2,"len":0.5,"lenmode":"fraction","y":0.5,"yanchor":"top"},"colorscale":[["0","rgba(68,1,84,1)"],["0.0416666666666667","rgba(70,19,97,1)"],["0.0833333333333333","rgba(72,32,111,1)"],["0.125","rgba(71,45,122,1)"],["0.166666666666667","rgba(68,58,128,1)"],["0.208333333333333","rgba(64,70,135,1)"],["0.25","rgba(60,82,138,1)"],["0.291666666666667","rgba(56,93,140,1)"],["0.333333333333333","rgba(49,104,142,1)"],["0.375","rgba(46,114,142,1)"],["0.416666666666667","rgba(42,123,142,1)"],["0.458333333333333","rgba(38,133,141,1)"],["0.5","rgba(37,144,140,1)"],["0.541666666666667","rgba(33,154,138,1)"],["0.583333333333333","rgba(39,164,133,1)"],["0.625","rgba(47,174,127,1)"],["0.666666666666667","rgba(53,183,121,1)"],["0.708333333333333","rgba(79,191,110,1)"],["0.75","rgba(98,199,98,1)"],["0.791666666666667","rgba(119,207,85,1)"],["0.833333333333333","rgba(147,214,70,1)"],["0.875","rgba(172,220,52,1)"],["0.916666666666667","rgba(199,225,42,1)"],["0.958333333333333","rgba(226,228,40,1)"],["1","rgba(253,231,37,1)"]],"showscale":true,"x":[-3.1086064069999999,-3.1086064069999999,-1,-1,-3.1086064069999999,-3.1086064069999999,-1,-1],"y":[-0.29999999999999999,-0.29999999999999999,-0.29999999999999999,-0.29999999999999999,-1.3124949340000001,-1.3124949340000001,-1.3124949340000001,-1.3124949340000001],"z":[-0.68000000000000005,-1.77268577,-0.68000000000000005,-1.77268577,-0.68000000000000005,-1.77268577,-0.68000000000000005,-1.77268577],"text":"SIX Market: Acceptable","hoverinfo":"none","mode":"markers","showlegend":false,"marker":{"size":4,"color":0,"colorscale":[[0,"red"],[0.5,"yellow"],[1,"green"]],"opacity":1,"line":{"color":"rgba(0, 0, 0, 0)","width":0}},"type":"mesh3d","facecolor":["red","red","red","red","red","red","red","red"],"opacity":0.20000000000000001,"frame":null},{"x":[0,0],"y":[1.05,1.9676168570000001],"z":[0.82999999999999996,0.82999999999999996],"text":["SIX Market: Acceptable","SIX Market: Acceptable"],"hoverinfo":["none","none"],"mode":"lines+markers","showlegend":false,"marker":{"color":0,"size":4,"colorscale":[[0,"red"],[0.5,"yellow"],[1,"green"]],"opacity":1,"line":{"color":"rgba(0, 0, 0, 0)","width":0}},"type":"scatter3d","line":{"color":"green","width":2},"error_y":{"color":"rgba(140,86,75,1)"},"error_x":{"color":"rgba(140,86,75,1)"},"frame":null},{"x":[0,0],"y":[1.05,1.9676168570000001],"z":[1.8681878220000001,1.8681878220000001],"text":["SIX Market: Acceptable","SIX Market: Acceptable"],"hoverinfo":["none","none"],"mode":"lines+markers","showlegend":false,"marker":{"color":0,"size":4,"colorscale":[[0,"red"],[0.5,"yellow"],[1,"green"]],"opacity":1,"line":{"color":"rgba(0, 0, 0, 0)","width":0}},"type":"scatter3d","line":{"color":"green","width":2},"error_y":{"color":"rgba(227,119,194,1)"},"error_x":{"color":"rgba(227,119,194,1)"},"frame":null},{"x":[3.289814904,3.289814904],"y":[1.05,1.9676168570000001],"z":[0.82999999999999996,0.82999999999999996],"text":["SIX Market: Acceptable","SIX Market: Acceptable"],"hoverinfo":["none","none"],"mode":"lines+markers","showlegend":false,"marker":{"color":0,"size":4,"colorscale":[[0,"red"],[0.5,"yellow"],[1,"green"]],"opacity":1,"line":{"color":"rgba(0, 0, 0, 0)","width":0}},"type":"scatter3d","line":{"color":"green","width":2},"error_y":{"color":"rgba(127,127,127,1)"},"error_x":{"color":"rgba(127,127,127,1)"},"frame":null},{"x":[3.289814904,3.289814904],"y":[1.05,1.9676168570000001],"z":[1.8681878220000001,1.8681878220000001],"text":["SIX Market: Acceptable","SIX Market: Acceptable"],"hoverinfo":["none","none"],"mode":"lines+markers","showlegend":false,"marker":{"color":0,"size":4,"colorscale":[[0,"red"],[0.5,"yellow"],[1,"green"]],"opacity":1,"line":{"color":"rgba(0, 0, 0, 0)","width":0}},"type":"scatter3d","line":{"color":"green","width":2},"error_y":{"color":"rgba(188,189,34,1)"},"error_x":{"color":"rgba(188,189,34,1)"},"frame":null},{"x":[0,0,3.289814904,3.289814904,0],"y":[1.05,1.05,1.05,1.05,1.05],"z":[0.82999999999999996,1.8681878220000001,1.8681878220000001,0.82999999999999996,0.82999999999999996],"text":["SIX Market: Acceptable","SIX Market: Acceptable","SIX Market: Acceptable","SIX Market: Acceptable","SIX Market: Acceptable"],"hoverinfo":["none","none","none","none","none"],"mode":"lines+markers","showlegend":false,"marker":{"color":0,"size":4,"colorscale":[[0,"red"],[0.5,"yellow"],[1,"green"]],"opacity":1,"line":{"color":"rgba(0, 0, 0, 0)","width":0}},"type":"scatter3d","line":{"color":"green","width":2},"error_y":{"color":"rgba(23,190,207,1)"},"error_x":{"color":"rgba(23,190,207,1)"},"frame":null},{"x":[0,0,3.289814904,3.289814904,0],"y":[1.9676168570000001,1.9676168570000001,1.9676168570000001,1.9676168570000001,1.9676168570000001],"z":[0.82999999999999996,1.8681878220000001,1.8681878220000001,0.82999999999999996,0.82999999999999996],"text":["SIX Market: Acceptable","SIX Market: Acceptable","SIX Market: Acceptable","SIX Market: Acceptable","SIX Market: Acceptable"],"hoverinfo":["none","none","none","none","none"],"mode":"lines+markers","showlegend":false,"marker":{"color":0,"size":4,"colorscale":[[0,"red"],[0.5,"yellow"],[1,"green"]],"opacity":1,"line":{"color":"rgba(0, 0, 0, 0)","width":0}},"type":"scatter3d","line":{"color":"green","width":2},"error_y":{"color":"rgba(31,119,180,1)"},"error_x":{"color":"rgba(31,119,180,1)"},"frame":null},{"x":[-3.1086064069999999,-3.1086064069999999],"y":[-0.29999999999999999,-1.3124949340000001],"z":[-0.68000000000000005,-0.68000000000000005],"text":["SIX Market: Acceptable","SIX Market: Acceptable"],"hoverinfo":["none","none"],"mode":"lines+markers","showlegend":false,"marker":{"color":0,"size":4,"colorscale":[[0,"red"],[0.5,"yellow"],[1,"green"]],"opacity":1,"line":{"color":"rgba(0, 0, 0, 0)","width":0}},"type":"scatter3d","line":{"color":"red","width":2},"error_y":{"color":"rgba(255,127,14,1)"},"error_x":{"color":"rgba(255,127,14,1)"},"frame":null},{"x":[-3.1086064069999999,-3.1086064069999999],"y":[-0.29999999999999999,-1.3124949340000001],"z":[-1.77268577,-1.77268577],"text":["SIX Market: Acceptable","SIX Market: Acceptable"],"hoverinfo":["none","none"],"mode":"lines+markers","showlegend":false,"marker":{"color":0,"size":4,"colorscale":[[0,"red"],[0.5,"yellow"],[1,"green"]],"opacity":1,"line":{"color":"rgba(0, 0, 0, 0)","width":0}},"type":"scatter3d","line":{"color":"red","width":2},"error_y":{"color":"rgba(44,160,44,1)"},"error_x":{"color":"rgba(44,160,44,1)"},"frame":null},{"x":[-1,-1],"y":[-0.29999999999999999,-1.3124949340000001],"z":[-0.68000000000000005,-0.68000000000000005],"text":["SIX Market: Acceptable","SIX Market: Acceptable"],"hoverinfo":["none","none"],"mode":"lines+markers","showlegend":false,"marker":{"color":0,"size":4,"colorscale":[[0,"red"],[0.5,"yellow"],[1,"green"]],"opacity":1,"line":{"color":"rgba(0, 0, 0, 0)","width":0}},"type":"scatter3d","line":{"color":"red","width":2},"error_y":{"color":"rgba(214,39,40,1)"},"error_x":{"color":"rgba(214,39,40,1)"},"frame":null},{"x":[-1,-1],"y":[-0.29999999999999999,-1.3124949340000001],"z":[-1.77268577,-1.77268577],"text":["SIX Market: Acceptable","SIX Market: Acceptable"],"hoverinfo":["none","none"],"mode":"lines+markers","showlegend":false,"marker":{"color":0,"size":4,"colorscale":[[0,"red"],[0.5,"yellow"],[1,"green"]],"opacity":1,"line":{"color":"rgba(0, 0, 0, 0)","width":0}},"type":"scatter3d","line":{"color":"red","width":2},"error_y":{"color":"rgba(148,103,189,1)"},"error_x":{"color":"rgba(148,103,189,1)"},"frame":null},{"x":[-3.1086064069999999,-3.1086064069999999,-1,-1,-3.1086064069999999],"y":[-0.29999999999999999,-0.29999999999999999,-0.29999999999999999,-0.29999999999999999,-0.29999999999999999],"z":[-0.68000000000000005,-1.77268577,-1.77268577,-0.68000000000000005,-0.68000000000000005],"text":["SIX Market: Acceptable","SIX Market: Acceptable","SIX Market: Acceptable","SIX Market: Acceptable","SIX Market: Acceptable"],"hoverinfo":["none","none","none","none","none"],"mode":"lines+markers","showlegend":false,"marker":{"color":0,"size":4,"colorscale":[[0,"red"],[0.5,"yellow"],[1,"green"]],"opacity":1,"line":{"color":"rgba(0, 0, 0, 0)","width":0}},"type":"scatter3d","line":{"color":"red","width":2},"error_y":{"color":"rgba(140,86,75,1)"},"error_x":{"color":"rgba(140,86,75,1)"},"frame":null},{"x":[-3.1086064069999999,-3.1086064069999999,-1,-1,-3.1086064069999999],"y":[-1.3124949340000001,-1.3124949340000001,-1.3124949340000001,-1.3124949340000001,-1.3124949340000001],"z":[-0.68000000000000005,-1.77268577,-1.77268577,-0.68000000000000005,-0.68000000000000005],"text":["SIX Market: Acceptable","SIX Market: Acceptable","SIX Market: Acceptable","SIX Market: Acceptable","SIX Market: Acceptable"],"hoverinfo":["none","none","none","none","none"],"mode":"lines+markers","showlegend":false,"marker":{"color":0,"size":4,"colorscale":[[0,"red"],[0.5,"yellow"],[1,"green"]],"opacity":1,"line":{"color":"rgba(0, 0, 0, 0)","width":0}},"type":"scatter3d","line":{"color":"red","width":2},"error_y":{"color":"rgba(227,119,194,1)"},"error_x":{"color":"rgba(227,119,194,1)"},"frame":null},{"x":[1.644907452,-2.0543032035],"y":[1.5088084285000001,-0.80624746700000005],"z":[1.349093911,-1.226342885],"text":["Sustainable: 3 SRIs and 11% of Stocks","At Risk: 6% of Stocks"],"hoverinfo":["text","text"],"mode":"text+markers","showlegend":false,"marker":{"color":"rgba(0,0,0,0)","size":1,"colorscale":[[0,"red"],[0.5,"yellow"],[1,"green"]],"opacity":1,"line":{"color":"rgba(0, 0, 0, 0)","width":0}},"type":"scatter3d","textfont":{"color":["green","red"],"size":12},"error_y":{"color":"rgba(127,127,127,1)"},"error_x":{"color":"rgba(127,127,127,1)"},"line":{"color":"rgba(127,127,127,1)"},"frame":null}],"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.20000000000000001,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
+</div>
+</div>
+<p><img src="https://static.wixstatic.com/media/5c2c44_c3d39de603314e5e8e2da82ced68f333~mv2.png/v1/fill/w_548,h_131,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/Picture1.png" class="img-fluid"></p>
+</section>
+<section id="results-and-conclusion" class="level2">
+<h2 class="anchored" data-anchor-id="results-and-conclusion">Results and Conclusion</h2>
+<section id="markets-performance" class="level6">
+<h6 class="anchored" data-anchor-id="markets-performance">Market’s Performance</h6>
+<p>The sustainability cuboid includes 11% of stocks and three-quarters of SRI strategies, whereas the at-risk quadrant contains 6% of stocks. The general market performance is deemed acceptable, with many stocks nearing the Sustainability cuboid. Despite needing substantial progress, these findings indicate a promising trend towards sustainability in the Swiss Stock Market.</p>
+</section>
+<section id="sri-performances" class="level6">
+<h6 class="anchored" data-anchor-id="sri-performances">SRI Performances</h6>
+<p>To answer the Research Question, <strong>SRI funds appear to promote sustainability</strong>. This is supported by the visualization showing 3 out of 4 strategies as sustainable. Contrary to expectations, “ESG Integration” is the only strategy classified as non-sustainable. In theory, the best strategy should be “ESG integration”, whereas the other three are seen as simplistic and lacking a nuanced ESG assessment concerning market returns. My paradoxical result likely arises because, unlike simpler strategies, “ESG Integration” involves more subjective and active management, leading to significant performance variations among different managers. Testing this hypothesis with another fund using “ESG Integration” yielded a “Sustainable result”, highlighting the classic debate between active and passive management but now within SRI.</p>
+</section>
+<section id="concluding-remarks" class="level6">
+<h6 class="anchored" data-anchor-id="concluding-remarks">Concluding Remarks</h6>
+<p>Ironically, firms with controversial reputations like Nestle, UBS, and Credit Suisse have good non-economic scores, while Cantonal banks unexpectedly show low scores. This raises questions about how these public entities might be causing more social and environmental harm and calls for a deeper examination of the legitimacy of ESG scores.</p>
+</section>
+</section>
+
+</main>
+<!-- /main column -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>
